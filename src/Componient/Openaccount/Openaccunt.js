@@ -110,130 +110,63 @@ form{
     margin: auto;
     border-radius: 10px;
     box-shadow: 1px 1px 7px;
+    width: fit-content;
 }
 
-.signin{
-    font-size: 16px;
-    font-weight: 700;
-    color: #0c71a9;
-}
 
-.topis{
-        font-size: 12px;
-    font-weight: 500;
-    opacity: .7;
-}
 
-.formslogin{
-    width: 100%;
-    margin-top: 30px;
-    gap: 10px;
-}
-
-label{
-    display: block;
-    font-size: 12px;
-    margin-block: 2px;
-}
-
-.mylabel{
+.infosslide{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
-    gap: 70px;
-    margin: 0;
-    margin-top: 20px;
-    box-sizing: border-box;
-    width: 100%;
-}
-.mylabel span{
-    font-size: 11px;
-    margin-block: 2px;
-    color: blue;
-    text-decoration: underline;
-}
-input{
-    width: 100%;
-    font-size: 16px;
-    padding: 10px 10px;
-    border: 1px solid lightgray;
-    outline: none;
-    border-radius: 10px;
+    gap: 20px;
+    
 }
 
-input::placeholder {
-  color: #999;
-  font-size: 12px;
-  font-style: italic;
-}
-
-
-.satyligin{
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    gap: 5px;
-    align-items: center;
-    font-size: 12px;
-}
-
-
-.signinp button{
-    padding: 10px 30px;
+.parts{
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3px;
-    border: none ;
-    background-color: #0c71a9;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.parts.active{
+    background-color: #0284c7;
     color: white;
-    border-radius: 8px;
-    cursor: pointer;
 }
 
-.neswest{
-    font-size: 12px;
-    margin-block: 7px;
-}
-.signins button{
-    padding: 10px 30px;
+.icons1{
+    padding: 8px 8px;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3px;
-    border: none ;
-    color: #0c71a9;
+    color: black;
     background-color: lightgray;
-    border-radius: 8px;
-    cursor: pointer;
 }
 
-.last{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    font-size: 11px;
-    margin-top: 10px;
+.icons1.active{
+    color: white;
+    background-color: #0c71a9;
+    width: fit-content;
 }
-.last span{
+
+.persoanlinf{
+    padding: 20px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3px;
+    flex-direction: column;
+}
+
+.mytop{
+    font-size: 12px;
+    font-weight: 500;
+}
+.persoanlinf span{
+    font-size: 10px;
     opacity: .7;
 }
-
-.lastlast{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* width: fit-content; */
-    margin: auto;
-    font-size: 10px;
-    margin-top: 10px;
-    text-align: center;
-}
-
 `
