@@ -147,7 +147,7 @@ label{
 .intouhbox{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     
 }
 
@@ -165,6 +165,13 @@ label{
     justify-content: flex-start;
 }
 
+.writeips p{
+    font-weight: 500;
+}
+.writeips span{
+    opacity: .7;
+    font-size: 12px;
+}
 .conshere1{
     padding: 10px 10px;
     border-radius: 10px;
