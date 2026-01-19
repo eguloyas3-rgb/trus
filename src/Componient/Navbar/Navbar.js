@@ -13,6 +13,7 @@ width: 100%;
 right: 0;
 top: 0;
 left: 0;
+z-index: 9999;
 
 .Nav-bar{
     display: flex;
