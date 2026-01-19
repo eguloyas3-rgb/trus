@@ -187,6 +187,55 @@ margin-top: 60px;
     border-radius: 10px;
 }
 
+.spans1 {
+    padding: 7px 7px;
+    border-radius: 10px;
+    background-color: #1274d8;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+}
+.spans2 {
+    padding: 7px 7px;
+    border-radius: 10px;
+    background-color: #119b67;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+}
+.spans3 {
+    padding: 7px 7px;
+    border-radius: 10px;
+    background-color: #bd2ca8;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+}
+.spans4 {
+    padding: 7px 7px;
+    border-radius: 10px;
+    background-color: #e23c1a;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+}
+.percent1{
+color: #1274d8;
+font-weight: 700;
+}
+.percent2{
+color: #119b67;
+font-weight: 700;
+}
+.percent3{
+color: #bd2ca8;
+font-weight: 700;
+}
+.percent4{
+color: #e23c1a;
+font-weight: 700;
+}
+
 .apy{
     font-size: 10px;
 }
@@ -210,14 +259,7 @@ margin-top: 60px;
     color: #0284c7;
     font-weight: 700;
 }
-.spans {
-    padding: 10px 10px;
-    border-radius: 10px;
-    background-color: #14b8a6;
-    display: flex;
-    justify-content: center;
-    width: fit-content;
-}
+
 .rate-box div span svg{
     font-size: 25px;
     color: white;

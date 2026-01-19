@@ -90,9 +90,9 @@ const Homepage = () => {
 
         <div className="rate-box">
           <div>
-            <span className="spans"><FaPiggyBank/></span>
+            <span className="spans1"><FaPiggyBank/></span>
             <div className="insid-ratebox">
-              <p>3.75%</p>
+              <p className="percent1">3.75%</p>
               <span className="apy">APY*</span>
               <p className="yeild">HIGH YIELD SAVINGS</p>
               <span className="highyiled">High Yield Savings Rate</span>
@@ -100,9 +100,9 @@ const Homepage = () => {
             </div>
           </div>
           <div>
-            <span className="spans"><FaCertificate/></span>
+            <span className="spans2"><FaCertificate/></span>
             <div className="insid-ratebox">
-              <p>3.75%</p>
+              <p className="percent2">3.75%</p>
               <span className="apy">APY*</span>
               <p className="yeild">HIGH YIELD SAVINGS</p>
               <span className="highyiled">High Yield Savings Rate</span>
@@ -110,9 +110,9 @@ const Homepage = () => {
             </div>
           </div>
           <div>
-            <span className="spans"> <FaCreditCard /></span>
+            <span className="spans3"> <FaCreditCard /></span>
             <div className="insid-ratebox">
-              <p>3.75%</p>
+              <p className="percent3">3.75%</p>
               <span className="apy">APY*</span>
               <p className="yeild">HIGH YIELD SAVINGS</p>
               <span className="highyiled">High Yield Savings Rate</span>
@@ -120,13 +120,13 @@ const Homepage = () => {
             </div>
           </div>
           <div>
-            <span className="spans"><FaHandHoldingUsd/></span>
+            <span className="spans4"><FaHandHoldingUsd/></span>
             <div className="insid-ratebox">
-              <p>3.75%</p>
+              <p className="percent4">3.75%</p>
               <span className="apy">APY*</span>
-              <p>HIGH YIELD SAVINGS</p>
-              <span>High Yield Savings Rate</span>
-              <p>FEATURED</p>
+              <p className="yeild">HIGH YIELD SAVINGS</p>
+              <span className="highyiled">High Yield Savings Rate</span>
+              <p className="futured">FEATURED</p>
             </div>
           </div>
         </div>
