@@ -476,6 +476,10 @@ border-radius: 10px;
     font-size: 15px;
     background-color: #0488cb;
     color: white;
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn:hover{

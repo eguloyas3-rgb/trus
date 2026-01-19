@@ -1,6 +1,7 @@
 import React from "react";
 import {Nav} from './Navbar'
 import Logo from '../../assets/Logo/logo.png'
+import { IoIosPersonAdd } from "react-icons/io";
 
 
 
@@ -26,7 +27,7 @@ const Navbar = () => {
 
             <div className="navright">
               <span onClick={() => window.location.href = '/login'}>Login</span>
-              <button onClick={() => window.location.href = '/open-account'}>Open Account</button>
+              <button style={{display: 'flex', justifyContent:'center', alignItems: 'center', gap: '3px'}} onClick={() => window.location.href = '/open-account'}><IoIosPersonAdd/> Open Account</button>
             </div>
          </div>
 

@@ -14,6 +14,8 @@ import photo929 from './../../assets/hompage/photo-1559526324-4b87b5e36e44.avif'
 import photo9292 from './../../assets/hompage/photo-1507003211169-0a1dd7228f2d.avif'
 import { FcBusinessContact } from "react-icons/fc";
 import { FaLocationDot ,FaCertificate} from "react-icons/fa6";
+import { FaSignInAlt } from "react-icons/fa";
+import { IoIosPersonAdd } from "react-icons/io";
 
 
 
@@ -46,8 +48,8 @@ const Homepage = () => {
               that everyone deserves a great experience every step of the way.
             </p>
             <div className="Openaccount">
-              <button onClick={() => window.location.href = '/open-account'}>Open Account Today</button>
-              <button onClick={() => window.location.href = '/login'}>Login to Banking</button>
+              <button style={{display: 'flex', justifyContent:'center', alignItems: 'center', gap: '3px'}} onClick={() => window.location.href = '/open-account'}><IoIosPersonAdd/> Open Account Today</button>
+              <button style={{display: 'flex', justifyContent:'center', alignItems: 'center', gap: '3px'}} onClick={() => window.location.href = '/login'}><FaSignInAlt/> Login to Banking</button>
             </div>
           </div>
 
@@ -225,7 +227,7 @@ const Homepage = () => {
             <span><FaCheck/> 24/7 customer support</span>
           </div>
           <div>
-            <button className="btn" onClick={() => window.location.href = '/open-account'}>Open Account Now</button>
+            <button className="btn" onClick={() => window.location.href = '/open-account'}><IoIosPersonAdd/> Open Account Now</button>
           </div>
         </div>
 
