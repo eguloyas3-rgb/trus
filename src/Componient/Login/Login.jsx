@@ -106,20 +106,20 @@ const Login = () => {
             </div>
             <div className="satyligin">
               <div>
-                <input type="checkbox" name="" id="" />
+                <input type="checkbox" name="checkbox" id="checkbox" />
               </div>
               <span>Keep me signed in</span>
             </div>
 
             <div className="signinp">
-              <button>
+              <button type="submit">
                 <FaSignInAlt /> Sign In to Account
               </button>
             </div>
             <p className="neswest">New to West Vent Online Bank?</p>
 
             <div className="signins">
-              <button>
+              <button type="button" onClick={() => window.location.href = '/open-account'}>
                 <IoIosPersonAdd /> Create New Account
               </button>
             </div>

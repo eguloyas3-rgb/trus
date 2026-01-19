@@ -6,6 +6,8 @@ import Footer from './Componient/Footer/Footer.jsx'
 import { Routes, Route } from 'react-router-dom'
 import About from './Componient/About/About.jsx'
 import Login from './Componient/Login/Login.jsx'
+import Openaccunt from './Componient/Openaccount/Openaccunt.jsx'
+import Contact from './Componient/Contact/Contact.jsx'
 
 function App() {
 
@@ -17,6 +19,8 @@ function App() {
       <Route path='/' element={<Homepage/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/about-us' element={<About/>}/>
+      <Route path='/open-account' element={<Openaccunt/>}/>
+      <Route path='/contact-us' element={<Contact/>}/>
       </Routes>
       <Footer/>
     </>
