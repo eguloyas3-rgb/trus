@@ -279,4 +279,23 @@ select {
     color: blue;
     text-decoration: underline;
 }
+
+
+
+
+
+
+@media screen and (max-width: 641px) {
+    .first{
+        display: none;
+    }
+
+    .seconds{
+        width: 95%;
+    }
+    form{
+        width: 100%;
+    }
+}
+
 `
