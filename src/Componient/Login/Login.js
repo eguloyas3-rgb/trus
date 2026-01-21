@@ -250,7 +250,7 @@ input::placeholder {
 
 
 
-@media screen and (max-width: 641px) {
+@media screen and (max-width: 815px) {
     .first{
         display: none;
     }

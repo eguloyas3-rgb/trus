@@ -240,7 +240,7 @@ const handleSubmit = async (e) => {
             </div>
 
             {acreateaccount === "Personal" && (
-              <div>
+              <div className="pos">
                 <div className="persoanlinf">
                   <span
                     className={`icons1 ${acreateaccount === "Personal" ? "active" : ""}`}

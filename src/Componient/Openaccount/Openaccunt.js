@@ -182,6 +182,7 @@ form{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
 }
 
 label{
@@ -285,7 +286,7 @@ select {
 
 
 
-@media screen and (max-width: 641px) {
+@media screen and (max-width: 815px) {
     .first{
         display: none;
     }
@@ -296,6 +297,13 @@ select {
     form{
         width: 100%;
     }
+
+
+    .pos {
+        width: 100%;
+        
+    }
+    
 }
 
 `
