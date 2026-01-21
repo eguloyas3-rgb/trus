@@ -69,13 +69,20 @@ height: auto;
     font-weight: 500;
 }
 
-.Rountine, .Rountineout{
+.Rountine{
     color: white;
     display: flex;
     margin-top: 30px;
      gap: 10px;
     
 
+}
+.Rountineout{
+    color: white;
+    display: flex;
+    margin-top: 30px;
+     gap: 10px;
+    display: none;
 }
 
 .box-same:first-child{
@@ -110,7 +117,7 @@ height: auto;
     background-color:#9333ea ;
    
 }
-.box-same:hover{
+.Rountine .box-same:hover{
     transform: scale(1.1);
     transition: 2s ease-in;
     cursor: pointer;
