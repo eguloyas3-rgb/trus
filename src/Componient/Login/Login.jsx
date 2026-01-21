@@ -27,7 +27,7 @@ const [message, setMessage] = useState(false)
 
 
       try {
-    const res = await fetch("https://your-backend-api/login", {
+    const res = await fetch("https://geochain.app/api/api/login/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,16 +36,20 @@ const [message, setMessage] = useState(false)
     });
 
     const data = await res.json();
+    console.log(data);
 
+// localStorage.setItem("authToken")
     if (!res.ok) {
       alert(data.message || "login failed");
       return;
     }
+  localStorage.setItem("authToken", data.token);
+
 
     setMessage(true);
     setTimeout(() => {
       window.location.href = '/profile'
-    }, 2000);
+    }, 3000);
   } catch (err) {
     alert("Server error");
   }
@@ -110,12 +114,13 @@ const [message, setMessage] = useState(false)
         </div>
 
 
-          {message && <p className="success-msg">Login Successful!</p>}
+         
 
 
 
         <div className="seconds">
           <form action="" onSubmit={Handlesumit}>
+             {message && <p className="success-msg">Login Successful!</p>}
             <p className="signin">Sign In</p>
             <span className="topis">
               Access your West Vent Online Bank account

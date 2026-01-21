@@ -6,6 +6,7 @@ import { BsFillSendFill } from "react-icons/bs";
 import { IoMdArrowRoundDown , IoIosPeople} from "react-icons/io";
 import { CgMoreVerticalR } from "react-icons/cg";
 import { FaCreditCard } from "react-icons/fa";
+import useDashboard from  './apifetch'
 
 
 
@@ -16,6 +17,30 @@ import { FaCreditCard } from "react-icons/fa";
 
 
 const Dashbaord = () => {
+
+  const fetchdata = useDashboard();
+
+//   time formatting
+  const formatTime = (isoString) => {
+  if (!isoString) return "";
+  const date = new Date(isoString);
+  return date.toLocaleString("en-US", {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
+};
+
+
+// amount formatting
+  const formatCurrency = (amount) => {
+  if (!amount) return "$0.00";
+
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(amount / 100);
+};
+
 
     return(
         <Dashboards>
@@ -29,12 +54,13 @@ const Dashbaord = () => {
 
                    <div className="banaces">
                     <p>Available Balance</p>
-                    <span>1,200.00</span>
+                    <span>{formatCurrency(fetchdata?.account?.balance)}</span>
+
                    </div>
 
                    <div className="actives">
                     <p className="acives"><span><GoDotFill/></span>Active</p>
-                    <p>Last Updated <span>Jan,07. 2026</span></p>
+                    <p>Last Updated <span>{formatTime(fetchdata?.current_time)}</span></p>
                    </div>
 
                 </div>

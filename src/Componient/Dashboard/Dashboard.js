@@ -6,12 +6,13 @@ import styled from "styled-components";
 export const Dashboards = styled.main`
 font-family: "Zalando Sans Expanded", sans-serif;
 background-color: #e3e7f2;
+height: 100vh;
 
 .main-dashboard{
     margin: auto;
     width: 80%;
-    /* margin-bottom: 10px; */
     padding: 20px 0px;
+    
 }
 
 .accoutninfo{
@@ -220,6 +221,7 @@ width: 95%;
     .sendtopup{
         font-size: 12px;
     }
+    
     
 }
 @media screen and (max-width: 440px) {

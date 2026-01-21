@@ -10,10 +10,11 @@ import Openaccunt from './Componient/Openaccount/Openaccunt.jsx'
 import Contact from './Componient/Contact/Contact.jsx'
 import Dashbaord from './Componient/Dashboard/Dashboard.jsx'
 import ProfileNav from './Componient/Dashboard/ProfileNav.jsx'
+import ProtectedRoute from './Componient/ProtectedRoute.jsx'
 
 function App() {
 
-  const token = localStorage.getItem("accessToken")
+  const token = localStorage.getItem("authToken")
 
   return (
     <>
@@ -24,12 +25,14 @@ function App() {
     <Routes>
       <Route path='/' element={<Homepage/>}/>
       <Route path='/login' element={<Login/>}/>
-      <Route path='/profile' element={<Dashbaord/>}/>
+      <Route path='/profile' element={<ProtectedRoute><Dashbaord/></ProtectedRoute>}/>
       <Route path='/about-us' element={<About/>}/>
       <Route path='/open-account' element={<Openaccunt/>}/>
       <Route path='/contact-us' element={<Contact/>}/>
       </Routes>
-      <Footer/>
+      {!token && <Footer />}
+
+      {/* <Footer/> */}
     </>
   )
 }

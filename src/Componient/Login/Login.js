@@ -6,6 +6,15 @@ import styled from "styled-components";
 export const Logon = styled.main`
 font-family: "Zalando Sans Expanded", sans-serif;
 
+.success-msg{
+    position: absolute;
+    width: fit-content;
+    background-color: green;
+    padding: 8px 8px;
+    border-radius: 10px;
+    color: white;
+}
+
 .mainlogin{
     display: flex;
 }
