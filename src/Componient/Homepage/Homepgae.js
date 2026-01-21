@@ -691,4 +691,84 @@ margin: auto;
     flex-direction: column;
     gap: 7px;
 }
+
+
+
+
+
+
+@media screen and (max-width: 815px){
+    .openhoursmain{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 100%;
+        
+    }
+
+    .openhoursmain div {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 20px;
+text-align: center;
+
+    }
+
+
+
+.testmoniabox{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 95%;
+}
+
+.focuedbox{
+    flex-direction: column;
+    width: 95%;
+    gap: 40px;
+}
+
+.columbox div{
+    width: 100%;
+}
+
+.imgebuld{
+    width: 95%;
+}
+
+.imgebuld div{
+    width: 100%;
+}
+
+.focuedbox{
+    text-align: center;
+}
+
+.div{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.pfirsrbox{
+    text-align: center;
+    width: 100%;
+}
+
+
+
+.Financialstrength{
+    width: 95%;
+    margin: 2rem auto;
+    flex-direction: column;
+   
+}
+
+.Financial{
+
+    width: 100%;
+
+}
+}
 `
