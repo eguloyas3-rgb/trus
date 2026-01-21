@@ -267,5 +267,9 @@ label{
     form{
         width: 100%;
     }
+
+    .h1sendmes{
+        font-size: 15px;
+    }
 }
 `

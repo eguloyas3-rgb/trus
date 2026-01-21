@@ -23,7 +23,7 @@ const Contact = () => {
       <div className="contactform">
         <div className="firsdiv">
           <form action="">
-            <h1>Send us a Message</h1>
+            <h1 className="h1sendmes">Send us a Message</h1>
 
             <div className="mycontacfom">
               <div className="firstname">
