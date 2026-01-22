@@ -10,7 +10,9 @@ import Openaccunt from './Componient/Openaccount/Openaccunt.jsx'
 import Contact from './Componient/Contact/Contact.jsx'
 import Dashbaord from './Componient/Dashboard/Dashboard.jsx'
 import ProfileNav from './Componient/Dashboard/ProfileNav.jsx'
+import Directdeposit from './Componient/Dashboard/Directdeposit.jsx'
 import ProtectedRoute from './Componient/ProtectedRoute.jsx'
+
 
 
 function App() {
@@ -27,13 +29,14 @@ function App() {
       <Route path='/' element={!token ? <Homepage /> : <Navigate to="/profile" replace />}/>
       <Route path='/login' element={!token ? <Login/> : <Navigate to="/profile" replace />}/>
       <Route path='/profile' element={<ProtectedRoute><Dashbaord/></ProtectedRoute>}/>
+      <Route path='/direct-deposit' element={<Directdeposit><Dashbaord/></Directdeposit>}/>
       <Route path='/about-us' element={<About/>}/>
       <Route path='/open-account' element={!token ? <Openaccunt/> : <Navigate to="/profile" replace />}/>
       <Route path='/contact-us' element={<Contact/>}/>
       </Routes>
-      {/* {!token && <Footer />} */}
+      {!token && <Footer />}
 
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }

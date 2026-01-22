@@ -3,10 +3,16 @@ import {Dashboards} from './Dashboard'
 import { IoAddCircleSharp, IoAddSharp } from "react-icons/io5";
 import { GoDotFill } from "react-icons/go";
 import { BsFillSendFill } from "react-icons/bs";
-import { IoMdArrowRoundDown , IoIosPeople} from "react-icons/io";
+import { IoMdArrowRoundDown , IoIosPeople, IoIosFlash} from "react-icons/io";
 import { CgMoreVerticalR } from "react-icons/cg";
 import { FaCreditCard } from "react-icons/fa";
 import useDashboard from  './apifetch'
+import { CiLock } from "react-icons/ci";
+import { TbTransactionDollar , TbShieldDollar} from "react-icons/tb";
+
+
+
+
 
 
 
@@ -84,6 +90,24 @@ const Dashbaord = () => {
                     </div>
                 </div>
 
+<div className="cartds">
+    <div>
+        <span><CiLock/></span>
+        <p>Card Unlocked</p>
+    </div>
+    <div>
+        <span onClick={() => window.location.href = '/direct-deposit'}><IoIosFlash/></span>
+        <p  onClick={() => window.location.href = '/direct-deposit'}>Early Direct Deposit</p>
+    </div>
+    <div>
+        <span><TbTransactionDollar/></span>
+        <p>Transactions</p>
+    </div>
+    <div>
+        <span><TbShieldDollar/></span>
+        <p>Overdraft Protection</p>
+    </div>
+</div>
 
                 <div className="quicttransfer">
                     <p className="trasferquick">Quick Transfer</p>

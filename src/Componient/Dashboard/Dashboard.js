@@ -82,7 +82,7 @@ justify-content: center;
 border-radius: 10px;
 justify-content: space-between;
 color: white;
-margin-block: 20px;
+margin-block: 30px;
 padding: 10px 20px;
 }
 
@@ -128,8 +128,43 @@ background-color: #f8c728;
 
 
 
+.cartds{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    /* gap: 30px; */
+}
+
+.cartds div{
+display: flex;
+gap: 10px;
+align-items: center;
+justify-content: flex-start;
+border-bottom: 1px solid green;
+padding: 20px 0px;
+cursor: pointer;
+}
+
+.cartds div span{
+    padding: 10px 10px;
+    border-radius: 10px;
+    color: green;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
 .trasferquick{
-    padding: 10px 20px;
+    /* padding: 10px 0px; */
+    margin-top: 50px;
     font-size: 18px;
 }
 
