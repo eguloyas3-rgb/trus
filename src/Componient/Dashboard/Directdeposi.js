@@ -112,4 +112,15 @@ font-family: "Zalando Sans Expanded", sans-serif;
     font-size: 13px;
 }
 
+
+
+
+
+@media screen and (max-width: 925px) {
+    .direct-deposit{
+    width: 95%;
+   
+
+}
+}
 `
