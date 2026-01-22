@@ -62,7 +62,7 @@ const Dashbaord = () => {
               Active
             </p>
             <p>
-              Last Updated <span>{formatTime(fetchdata?.current_time)}</span>
+             <span>{formatTime(fetchdata?.current_time)}</span>
             </p>
           </div>
         </div>
