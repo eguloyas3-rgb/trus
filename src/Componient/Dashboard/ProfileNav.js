@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Nav = styled.main`
   background-color: #27324c;
-
+font-family: "Zalando Sans Expanded", sans-serif;
   .navbars {
     width: 80%;
     margin: auto;
@@ -56,6 +56,11 @@ export const Nav = styled.main`
     position: relative;
   }
 
+
+  .names{
+    font-size: 15x;
+  }
+
   .dropdown {
     position: absolute;
     display: flex;
@@ -70,10 +75,11 @@ export const Nav = styled.main`
   }
 
   .dropdown span {
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
     margin-block: 15px;
     text-transform: uppercase;
+
 
   }
 

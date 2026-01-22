@@ -30,9 +30,9 @@ const ProfileNav = () => {
           <span className="iconss">
             <IoIosNotifications />
           </span>
-          <span></span>
+         
           <span>LTC 93</span>
-          <span>{fetchdata?.account?.first_name}</span>
+          <span className="names">{fetchdata?.account?.first_name}</span>
           <div className="name">
             <span className="iconss" onClick={dropdowns}>
               <VscAccount />
