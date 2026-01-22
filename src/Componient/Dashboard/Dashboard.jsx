@@ -87,8 +87,8 @@ const Dashbaord = () => {
                         <p>Send</p>
                     </div>
                     <div className="onebyne">
-                        <span ><IoMdArrowRoundDown/></span>
-                        <p>Recieve</p>
+                        <span onClick={() => window.location.href = '/direct-deposit'}><IoMdArrowRoundDown/></span>
+                        <p onClick={() => window.location.href = '/direct-deposit'}>Recieve</p>
                     </div>
                     <div className="onebyne">
                         <span ><CgMoreVerticalR/></span>
