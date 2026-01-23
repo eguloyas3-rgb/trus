@@ -42,8 +42,8 @@ const Transaction = () => {
     <Transactions>
       <div className="transactiosn">
         <div className="topstranc">
-          <FaArrowLeft />
-          <p>Transactions</p>
+          <FaArrowLeft onClick={() => window.location.href = '/profile'} />
+          <p onClick={() => window.location.href = '/profile'}>Transactions</p>
         </div>
 
         <div className="transationhistory">
@@ -57,7 +57,11 @@ const Transaction = () => {
                 <div key={index} className="transaction-item">
                   <span>{new Date(tr.timestamp).toLocaleString()}</span>
                   <div className="historyess">
+   
                     <div>
+                   <div className="mysys">
+                    
+                    
                      <span
   style={{
     color:
@@ -72,14 +76,21 @@ const Transaction = () => {
   {tr.transaction_type.toUpperCase()}
 </span>
 
+                     {tr.receiver_bank && (
+      <p>To: {tr.receiver_bank}</p>
+    )}
 
-                      <span>{tr.purpose}</span>
+                      <span>Desc: {tr.purpose}</span>
+                   </div>
+                      
                       <div>
-                        <span>reference {tr.reference}</span>
+                        <span>Ref: {tr.reference}</span>
+                        
                       </div>
                     </div>
 
                     <div>
+
                       <span
                         style={{
                              color:
@@ -94,9 +105,13 @@ const Transaction = () => {
                         {tr.transaction_type === "credit" ? "+" : "-"}$
                         {Number(tr.amount).toLocaleString()}
                       </span>
+
                     </div>
+
                   </div>
+
                 </div>
+
               ))}
             </div>
           )}
