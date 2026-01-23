@@ -18,6 +18,13 @@ const Accountprofile = () => {
 
         <div className="myinfo">
           <div className="smae">
+            <span>Full Name</span>
+            <span>{fetchdata?.account?.first_name} {fetchdata?.account?.last_name}</span>
+          </div>
+          <span className="spann">Verified <MdOutlineKeyboardArrowRight/></span>
+        </div >
+        <div className="myinfo">
+          <div className="smae">
             <span>Email Address</span>
             <span>{fetchdata?.account?.email}</span>
           </div>
