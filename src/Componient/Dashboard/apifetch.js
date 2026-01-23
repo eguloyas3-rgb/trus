@@ -7,7 +7,7 @@
       const [fetchdata, setFetchdata] = useState(null);
 useEffect(() => {
   const token = localStorage.getItem("authToken");
-// https://geochain.app/api/
+// https://geochain.app/api/api/
 // https://geochain.app/api/
   fetch("https://geochain.app/api/api/account/dashboard", {
     headers: {

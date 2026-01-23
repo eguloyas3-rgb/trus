@@ -91,10 +91,10 @@ const Dashbaord = () => {
             </p>
           </div>
           <div className="onebyne">
-            <span>
+            <span onClick={() => (window.location.href = "/account")}>
               <CgMoreVerticalR />
             </span>
-            <p>More</p>
+            <p onClick={() => (window.location.href = "/account")}>More</p>
           </div>
         </div>
 

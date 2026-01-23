@@ -42,8 +42,8 @@ const ProfileNav = () => {
             </span>
             {dropdown && (
               <div className="dropdown">
-                <span onClick={() => setDropdown(false)}>{fetchdata?.account?.first_name} {fetchdata?.account?.last_name}</span>
-                <span onClick={() => setDropdown(false)}>Account</span>
+                <span  onClick={() => (window.location.href = "/account")}>{fetchdata?.account?.first_name} {fetchdata?.account?.last_name}</span>
+                <span  onClick={() => (window.location.href = "/account")}>Account</span>
                 <span onClick={Logout}>Logout</span>
               </div>
             )}

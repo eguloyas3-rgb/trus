@@ -10,8 +10,8 @@ font-size: 12px;
 .transactiosn{
     width: 80%;
     margin: auto;
+    padding: 20px 0px;
 }
-
 
 .topstranc{
     display: flex;
