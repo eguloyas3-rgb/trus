@@ -288,7 +288,7 @@ const handleSubmit = async (e) => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="Username">Username *</label>
+                    <label htmlFor="Username">User ID *</label>
                     <input
                       type="text"
                       name="username"
