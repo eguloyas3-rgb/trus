@@ -75,10 +75,14 @@ const Transaction = () => {
 >
   {tr.transaction_type.toUpperCase()}
 </span>
+{tr.transaction_type === "credit" && (
+  <p>From: {tr.receiver_bank || "External Bank"}</p>
+)}
 
-                     {tr.receiver_bank && (
-      <p>To: {tr.receiver_bank}</p>
-    )}
+{tr.transaction_type === "debit" && (
+  <p>To: {tr.receiver_bank}</p>
+)}
+
 
                       <span>Desc: {tr.purpose}</span>
                    </div>
