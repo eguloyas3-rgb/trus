@@ -50,16 +50,19 @@ height: auto;
 .Openaccount button:first-child{
     padding: 13px 20px;
     border-radius: 10px;
+    font-family: "Zalando Sans Expanded", sans-serif;
     border: none;
     cursor: pointer;
     background-color:#0488cb ;
     color: white;
     font-weight: 500;
+    
 }
 
 .Openaccount button:nth-child(2){
     padding: 13px 20px;
     border-radius: 10px;
+    font-family: "Zalando Sans Expanded", sans-serif;
     border: none;
     cursor: pointer;
     background-color:#373d40 ;
