@@ -9,65 +9,56 @@ import { IoIosPersonAdd } from "react-icons/io";
 import { BiSupport } from "react-icons/bi";
 import { IoTerminal } from "react-icons/io5";
 
-
-
-
 const Login = () => {
+  const [message, setMessage] = useState(false);
 
-const [message, setMessage] = useState(false);
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
 
-const [formData, setFormData] = useState({
-  username: "",
-  password: "",
-});
+  const Handlesumit = async (e) => {
+    e.preventDefault();
 
-const Handlesumit = async (e) => {
-  e.preventDefault();
+    try {
+      const res = await fetch("https://onlinbnkapi.onrender.com/api/login/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-  try {
-    const res = await fetch("https://geochain.app/app/api/login/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+      const data = await res.json();
+      console.log(data);
 
-    const data = await res.json();
-    console.log(data);
+      if (!res.ok) {
+        alert(data.detail || "login failed");
+        return;
+      }
 
-    if (!res.ok) {
-      alert(data.detail || "login failed");
-      return;
+      // ✅ SAVE JWT TOKENS CORRECTLY
+      localStorage.setItem("accessToken", data.access);
+      localStorage.setItem("refreshToken", data.refresh);
+
+      setMessage(true);
+
+      setTimeout(() => {
+        window.location.href = "/profile";
+      }, 3000);
+    } catch (err) {
+      alert("Server error");
     }
-
-    // ✅ SAVE JWT TOKENS CORRECTLY
-    localStorage.setItem("accessToken", data.access);
-    localStorage.setItem("refreshToken", data.refresh);
-
-    setMessage(true);
-
-    setTimeout(() => {
-      window.location.href = "/profile";
-    }, 3000);
-
-  } catch (err) {
-    alert("Server error");
-  }
-};
-
-
-
+  };
 
   return (
     <Logon>
       <div className="mainlogin">
-
         <div className="first">
           <div className="imagspan">
-           <div>
-             <img src={Logo} alt="Logo" />
-           </div>
+            <div>
+              <img src={Logo} alt="Logo" />
+            </div>
           </div>
           <div className="heade">
             <h1>Welcome Back</h1>
@@ -118,14 +109,9 @@ const Handlesumit = async (e) => {
           </div>
         </div>
 
-
-         
-
-
-
         <div className="seconds">
           <form action="" onSubmit={Handlesumit}>
-             {message && <p className="success-msg">Login Successful!</p>}
+            {message && <p className="success-msg">Login Successful!</p>}
             <p className="signin">Sign In</p>
             <span className="topis">
               Access your West Vent Online Bank account
@@ -133,15 +119,15 @@ const Handlesumit = async (e) => {
 
             <div className="formslogin">
               <div>
-                <label htmlFor="username">
-                   User ID
-                </label>
+                <label htmlFor="username">User ID</label>
                 <input
                   type="text"
                   name="username"
                   id="username"
                   value={formData.username}
-                  onChange={(e) => setFormData({...formData, username: e.target.value})}
+                  onChange={(e) =>
+                    setFormData({ ...formData, username: e.target.value })
+                  }
                   placeholder="User ID"
                   required
                 />
@@ -156,7 +142,9 @@ const Handlesumit = async (e) => {
                   name="password"
                   id="password"
                   value={formData.password}
-                  onChange={(e) => setFormData({...formData, password: e.target.value})}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
                   placeholder="Enter your password"
                   required
                 />
@@ -177,20 +165,30 @@ const Handlesumit = async (e) => {
             <p className="neswest">New to West Vent Online Bank?</p>
 
             <div className="signins">
-              <button type="button" onClick={() => window.location.href = '/open-account'}>
+              <button
+                type="button"
+                onClick={() => (window.location.href = "/open-account")}
+              >
                 <IoIosPersonAdd /> Create New Account
               </button>
             </div>
           </form>
           <div className="last">
-            <span><RiSecurePaymentLine/> Security</span>
-            <span><BiSupport/> Support</span>
-            <span><IoTerminal/> Terms</span>
- 
-
+            <span>
+              <RiSecurePaymentLine /> Security
+            </span>
+            <span>
+              <BiSupport /> Support
+            </span>
+            <span>
+              <IoTerminal /> Terms
+            </span>
           </div>
           <div className="lastlast">
-            <span>By signing in, you agree to our Terms of Service and Privacy Policy. Your data is protected with bank-grade security.</span>
+            <span>
+              By signing in, you agree to our Terms of Service and Privacy
+              Policy. Your data is protected with bank-grade security.
+            </span>
           </div>
         </div>
       </div>
