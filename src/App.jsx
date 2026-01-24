@@ -21,6 +21,7 @@ import Transaction from './Componient/Dashboard/Transaction.jsx'
 import Accountprofile from './Componient/Dashboard/Accountprofile.jsx'
 import Wiretransfer from './Componient/Dashboard/Wiretransfer.jsx'
 import Localtransfer from './Componient/Dashboard/Localtransfer.jsx'
+import RenderPinger from './Componient/RenderPinger.jsx'
 
 
 
@@ -30,6 +31,8 @@ function App() {
 
   return (
     <>
+    <RenderPinger />
+
     {/* <Navbar/> */}
     {/* <ProfileNav/> */}
     {token ? <ProfileNav/> :  <Navbar/>}

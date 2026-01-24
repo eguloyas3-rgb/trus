@@ -27,7 +27,7 @@ const Wiretransfer = () => {
   const [showOtpModal, setShowOtpModal] = useState(false); // ✅ MISSING STATE
 
   // ✅ TRANSFER SUBMIT
- const handleTransferSubmit = async (e) => {
+const handleTransferSubmit = async (e) => {
   e.preventDefault();
   setError("");
   setLoading(true);
@@ -35,9 +35,9 @@ const Wiretransfer = () => {
   try {
     const token = localStorage.getItem("accessToken");
     if (!token) {
-      localStorage.clear();      // remove any stale data
-      window.location.href = "/login"; // redirect immediately
-      return;                     // stop execution
+      localStorage.clear();      
+      window.location.href = "/login"; 
+      return;                     
     }
 
     const res = await fetch("https://onlinbnkapi.onrender.com/api/transfers/", {
@@ -54,6 +54,8 @@ const Wiretransfer = () => {
         swift_code: swiftCode,
         purpose,
       }),
+      // ✅ ensure token/cookies are sent if needed
+      credentials: 'include',
     });
 
     if (!res.ok) {
@@ -71,8 +73,7 @@ const Wiretransfer = () => {
   }
 };
 
-
-  // ✅ OTP SUBMIT
+// ✅ OTP SUBMIT
 const handleOtpSubmit = async (e) => {
   e.preventDefault();
   setError('');
@@ -93,6 +94,8 @@ const handleOtpSubmit = async (e) => {
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({ verification_code: otpCode }),
+      // ✅ ensure token/cookies are sent if needed
+      credentials: 'include',
     });
 
     const data = await res.json();
@@ -112,6 +115,7 @@ const handleOtpSubmit = async (e) => {
     setLoading(false);
   }
 };
+
 
 
   return (
