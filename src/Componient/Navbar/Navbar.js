@@ -78,7 +78,8 @@ font-size: 16px;
     background-color:#0488cb ;
     color: white;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 14px;
+    font-family: "Zalando Sans Expanded", sans-serif;
 }
 
 .navright button:hover{
