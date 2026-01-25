@@ -269,11 +269,7 @@ input::placeholder {
     font-size: 16px;
     padding: 10px 20px;
 }
-.otp-box label{
-    width: 100%;
-    font-size: 16px;
-    padding: 2px 20px;
-}
+
 .otp-btn{
     padding: 10px  0px;
     border-radius: 8px;
@@ -294,6 +290,18 @@ input::placeholder {
     font-family: "Zalando Sans Expanded", sans-serif;
 }
 
+.closes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+.closes p{
+    color: red;
+    font-size: 25px;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 815px) {
     .first{

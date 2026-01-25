@@ -8,6 +8,7 @@ import { FaSignInAlt } from "react-icons/fa";
 import { IoIosPersonAdd } from "react-icons/io";
 import { BiSupport } from "react-icons/bi";
 import { IoTerminal } from "react-icons/io5";
+import { MdOutlineClose } from "react-icons/md";
 
 const Login = () => {
   const [message, setMessage] = useState(false);
@@ -225,9 +226,13 @@ const handleResendOTP = async () => {
               </button>
             </div>
             
+
 {step === "verify" && (
   <div className="otp-box">
-    <label>Verification Code</label>
+    <div className="closes">
+          <label>Verification Code</label>
+    <p onClick={() => setStep(false)}><MdOutlineClose/></p>
+    </div>
 
     <input
       type="text"
@@ -253,7 +258,7 @@ const handleResendOTP = async () => {
       {resendMessage && <p className="resend-message">{resendMessage}</p>}
     </div>
   </div>
- )} 
+  )}  
 
 
 
