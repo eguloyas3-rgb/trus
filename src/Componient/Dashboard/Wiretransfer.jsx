@@ -11,6 +11,7 @@ const Wiretransfer = () => {
   const [amount, setAmount] = useState("");
   const [receiverAccount, setReceiverAccount] = useState("");
   const [receiverName, setReceiverName] = useState("");
+  const [receiverPhone, setReceiverPhone] = useState("");
   const [receiverBank, setReceiverBank] = useState("");
   const [iban, setIban] = useState("");
   const [swiftCode, setSwiftCode] = useState("");
@@ -41,6 +42,7 @@ const Wiretransfer = () => {
         amount: parseFloat(amount),
         receiver_account: receiverAccount,
         receiver_name: receiverName,
+        receiver_phone: receiverPhone,
         receiver_bank: receiverBank,
         iban,
         swift_code: swiftCode,
@@ -48,7 +50,7 @@ const Wiretransfer = () => {
         recipient_address: recipientAddress,
       };
 
-      const res = await fetch("https://geochain.app/apps/api/transfers/", {
+      const res = await fetch("http://127.0.0.1:8000/api/transfers/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -101,6 +103,7 @@ const Wiretransfer = () => {
         amount: parseFloat(amount),
         receiver_account: receiverAccount,
         receiver_name: receiverName,
+        receiver_phone: receiverPhone,
         receiver_bank: receiverBank,
         iban,
         swift_code: swiftCode,
@@ -109,7 +112,7 @@ const Wiretransfer = () => {
         [codeKey]: codeInput,
       };
 
-      const res = await fetch("https://geochain.app/apps/api/transfers/", {
+      const res = await fetch("http://127.0.0.1:8000/api/transfers/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -148,7 +151,7 @@ const Wiretransfer = () => {
     setError("");
     try {
       const token = localStorage.getItem("accessToken");
-      const res = await fetch("https://geochain.app/apps/api/transfers/", {
+      const res = await fetch("http://127.0.0.1:8000/api/transfers/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -279,6 +282,15 @@ const Wiretransfer = () => {
             <input
               value={swiftCode}
               onChange={(e) => setSwiftCode(e.target.value)}
+              required
+            />
+          </div>
+
+          <div>
+            <label>Receiver’s Number</label>
+            <input
+              value={receiverPhone}
+              onChange={(e) => setReceiverPhone(e.target.value)}
               required
             />
           </div>
