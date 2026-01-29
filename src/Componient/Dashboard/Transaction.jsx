@@ -26,7 +26,7 @@ const Transaction = () => {
         }
 
         const res = await fetch(
-          "http://127.0.0.1:8000/api/transactions/history/",
+          "https://geochain.app/apps/api/transactions/history/",
           {
             headers: {
               Authorization: `Bearer ${token}`,
