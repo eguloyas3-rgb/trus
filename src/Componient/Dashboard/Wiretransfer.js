@@ -205,6 +205,40 @@ h4 >span{
 
 
 
+.phone-number-input-container {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.phone-number-input-container label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  border: none;
+}
+
+
+
+
+.phone-number-input:focus,
+.country-code-select:focus {
+  outline: none;
+
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  box-sizing: border-box;
+}
+
+
+
+
 
 
 

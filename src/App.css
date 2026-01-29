@@ -5,3 +5,7 @@
 }
 
 
+.profilewrapper,
+.profilewrapper * {
+  pointer-events: auto;
+}
