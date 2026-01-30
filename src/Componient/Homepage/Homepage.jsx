@@ -442,7 +442,7 @@ const Homepage = () => {
             <p>Phone Banking</p>
             <span>Available 24/7</span>
             <span>Call: 1-800-BANKING</span>
-            <span>International: +1-555-0123</span>
+            <span>International: +1 (380) 219 - 7935</span>
           </div>
           <div>
             <span className="spamhuma">
