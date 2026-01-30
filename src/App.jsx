@@ -89,9 +89,9 @@ function App() {
         <Route
           path="/find-atm"
           element={
-            <ProtectedRoute>
-              <FindAtm />
-            </ProtectedRoute>
+            // <ProtectedRoute>
+            <FindAtm />
+            // </ProtectedRoute>
           }
         />
         <Route

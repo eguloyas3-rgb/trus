@@ -68,7 +68,9 @@ const Footer = () => {
               Online Banking
             </li>
             <li>Mobile App</li>
-            <li>ATM Locations</li>
+            <li onClick={() => (window.location.href = "/find-atm")}>
+              ATM Locations
+            </li>
             <li>Security Center</li>
           </ul>
         </div>
