@@ -28,7 +28,7 @@ const useDashboard = () => {
       return;
     }
 
-    fetch("http://127.0.0.1:8000/api/account/dashboard", {
+    fetch("https://geochain.app/vicky/api/account/dashboard", {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
