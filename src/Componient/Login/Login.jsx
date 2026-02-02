@@ -39,7 +39,7 @@ const Login = () => {
           };
 
     try {
-      const res = await fetch("https://geochain.app/apps/api/login/", {
+      const res = await fetch("http://127.0.0.1:8000/api/login/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -86,7 +86,7 @@ const Login = () => {
     setResendMessage("");
 
     try {
-      const res = await fetch("https://geochain.app/apps/api/login/", {
+      const res = await fetch("http://127.0.0.1:8000/api/login/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: formData.username, resend: true }),

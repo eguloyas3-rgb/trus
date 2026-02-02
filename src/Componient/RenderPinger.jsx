@@ -2,7 +2,7 @@
 
 // function RenderPinger() {
 //   useEffect(() => {
-//     const renderURL = "https://geochain.app/apps/api/keep-alive/";
+//     const renderURL = "http://127.0.0.1:8000/api/keep-alive/";
 
 //     let fastIntervalCount = 0;
 

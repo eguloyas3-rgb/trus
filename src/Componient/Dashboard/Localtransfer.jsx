@@ -50,7 +50,7 @@ const Wiretransfer = () => {
         purpose,
       };
 
-      const res = await fetch("https://geochain.app/apps/api/transfers/", {
+      const res = await fetch("http://127.0.0.1:8000/api/transfers/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -113,7 +113,7 @@ const Wiretransfer = () => {
         [codeKey]: codeInput,
       };
 
-      const res = await fetch("https://geochain.app/apps/api/transfers/", {
+      const res = await fetch("http://127.0.0.1:8000/api/transfers/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -155,7 +155,7 @@ const Wiretransfer = () => {
     setError("");
     try {
       const token = localStorage.getItem("accessToken");
-      const res = await fetch("https://geochain.app/apps/api/transfers/", {
+      const res = await fetch("http://127.0.0.1:8000/api/transfers/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -186,7 +186,7 @@ const Wiretransfer = () => {
   const getCodeLabel = (type) => {
     switch (type) {
       case "email_otp":
-        return "{TAX CODE}"; //DELETE THIS //"{OTP}";
+        return "{OTP}";
       case "tax":
         return "{TAX CODE}";
       case "activation":
@@ -531,7 +531,7 @@ const Wiretransfer = () => {
                 </button>
 
                 {/* ONLY show resend for email OTP */}
-                {/* {currentCodeType === "email_otp" && (
+                {currentCodeType === "email_otp" && (
                   <button
                     className="cancels"
                     type="button"
@@ -539,10 +539,9 @@ const Wiretransfer = () => {
                   >
                     {loading ? "Sending..." : "Resend OTP"}
                   </button>
-                )} */}
+                )}
 
                 {(currentCodeType === "tax" ||
-                  currentCodeType === "email_otp" || //DELETE THIS
                   currentCodeType === "activation" ||
                   currentCodeType === "imf") && (
                   <div className="conatcoffier">

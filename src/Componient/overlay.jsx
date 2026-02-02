@@ -1,19 +1,14 @@
 import React from "react";
-import {Overlyloadinf} from './overlay'
-
-
+import { Overlyloadinf } from "./overlay";
 
 const Overlay = () => {
+  return (
+    <Overlyloadinf>
+      <div className="overlay">
+        <div className="loader"></div>
+      </div>
+    </Overlyloadinf>
+  );
+};
 
-    return(
- <Overlyloadinf>
-        <div className="overlay">
-            <div class="loader"></div>
-        </div>
-        </Overlyloadinf>
-    
-    )
-}
-
-
-export default Overlay
+export default Overlay;
