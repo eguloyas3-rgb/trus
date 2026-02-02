@@ -6,6 +6,8 @@ const allowedOrigins = [
   "http://localhost:5173",          
   "https://westventonline.org",
   "https://www.westventonline.org",
+  "https://www.westventoline.org",
+  "https://westventoline.org",
 ];
 
 export default async function handler(req, res) {
