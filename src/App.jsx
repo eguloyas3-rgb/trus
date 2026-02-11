@@ -21,7 +21,10 @@ import Transaction from "./Componient/Dashboard/Transaction.jsx";
 import Accountprofile from "./Componient/Dashboard/Accountprofile.jsx";
 import Wiretransfer from "./Componient/Dashboard/Wiretransfer.jsx";
 import Localtransfer from "./Componient/Dashboard/Localtransfer.jsx";
-import Grants from "./Componient/grants/grants.jsx";
+import Grants from "./Componient/grants/Grans.jsx";
+import Personalbnk from "./Componient/grants/Personnal.jsx";
+import Businessbnk from "./Componient/grants/Business.jsx";
+import Loan from "./Componient/grants/Loan.jsx";
 
 function App() {
   const token = localStorage.getItem("accessToken");
@@ -126,7 +129,10 @@ function App() {
           element={!token ? <Openaccunt /> : <Navigate to="/profile" replace />}
         />
         <Route path="/contact-us" element={<Contact />} />
-        <Route path="/grants" element={<Grants />} />
+        <Route path="/grants-aids" element={<Grants />} />
+        <Route path="/personal" element={<Personalbnk />} />
+        <Route path="/business" element={<Businessbnk />} />
+        <Route path="/loan-credit" element={<Loan />} />
       </Routes>
       {!token && <Footer />}
 

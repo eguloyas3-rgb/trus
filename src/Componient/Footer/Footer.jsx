@@ -4,6 +4,8 @@ import logo from "../../assets/Logo/logo.png";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
+import { RiSecurePaymentFill } from "react-icons/ri";
+import { CiLock } from "react-icons/ci";
 
 const Footer = () => {
   return (
@@ -43,10 +45,12 @@ const Footer = () => {
             <li onClick={() => (window.location.href = "/about-us")}>
               About us
             </li>
-            <li onClick={() => (window.location.href = "/our-service")}>
+            <li onClick={() => (window.location.href = "/personal")}>
               Service
             </li>
-            <li>Grants and Aids</li>
+            <li onClick={() => (window.location.href = "/grants-aids")}>
+              Grants and Aids
+            </li>
             <li onClick={() => (window.location.href = "/contact-us")}>
               Contact
             </li>
@@ -55,10 +59,16 @@ const Footer = () => {
         <div>
           <ul>
             <li>Service</li>
-            <li>Personal Banking</li>
-            <li>Business Banking</li>
-            <li>Loans & Credit</li>
-            <li>Cards</li>
+            <li onClick={() => (window.location.href = "/personal")}>
+              Personal Banking
+            </li>
+            <li onClick={() => (window.location.href = "/business")}>
+              Business Banking
+            </li>
+            <li onClick={() => (window.location.href = "/loan-credit")}>
+              Loans & Credit
+            </li>
+            <li onClick={() => (window.location.href = "/login")}>Cards</li>
           </ul>
         </div>
         <div>
@@ -71,8 +81,45 @@ const Footer = () => {
             <li onClick={() => (window.location.href = "/find-atm")}>
               ATM Locations
             </li>
-            <li>Security Center</li>
+            <li onClick={() => (window.location.href = "/login")}>
+              Security Center
+            </li>
           </ul>
+        </div>
+      </div>
+
+      <div className="last">
+        <div className="samll">
+          <span>© 2026 West Vent Online Bank. All rights reserved.</span>
+          <span
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            <RiSecurePaymentFill style={{ color: "green", fontSize: "20px" }} />{" "}
+            FDIC Insured
+          </span>
+          <span
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            <CiLock style={{ color: "green", fontSize: "20px" }} /> 256-bit SSL
+          </span>
+        </div>
+        <div className="lasts">
+          <span>Privacy Policy</span>
+          <span>Terms of Service</span>
+          <span onClick={() => (window.location.href = "/contact-us")}>
+            Accessibility
+          </span>
+          <span onClick={() => (window.location.href = "/")}>Sitemap</span>
         </div>
       </div>
     </Footers>

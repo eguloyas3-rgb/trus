@@ -48,7 +48,7 @@ ul{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 40px;
     cursor: pointer;
      font-size: 15px;
 }
@@ -87,8 +87,56 @@ font-size: 16px;
 }
 
 
+.wrappersss{
+    position: absolute;
+    margin-right: -60px;
+}
+.dropdownserver{
+    position: absolute;
+    background-color: white;
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 8px;
+    top: 90%;
+    z-index: 9999;
+    width: 250px;
+}
+
+.dropdownserver span{
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    align-items: center;
+    font-size: 14px;
+    
+}
+.dropdownserver span:hover{
+   transform: scale(1.06);
+   transition: ease-in-out 2s;
+}
+
+.dropdownserver span svg{
+    font-size: 20px;
+  
+}
+
+
+
+
+
 @media screen and (max-width: 815px) {
     
+    .dropsmallscreen{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: -30px;
+        font-size: 12px;
+    }
     .navmiddle, .navright{
         display: none;
     }
