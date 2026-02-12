@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { Transactions } from "./Transaction";
+import useDashboard from "./apifetch";
+
+const currencySymbols = {
+  USD: "$",
+  AUD: "A$",
+  CAD: "C$",
+  GBP: "£",
+  EUR: "€",
+};
 
 const Transaction = () => {
+  const fetchdata = useDashboard();
+
   const [loading, setLoading] = useState(true);
   const [trasactions, setTrasactions] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -13,6 +24,9 @@ const Transaction = () => {
   const currentTransactions = trasactions.slice(indexOfFirst, indexOfLast);
 
   const totalPages = Math.ceil(trasactions.length / itemsPerPage);
+
+  const currency = fetchdata?.account?.currency || "USD"; // fallback if not loaded
+  const symbol = currencySymbols[currency] || currency;
 
   useEffect(() => {
     const fetchTransactions = async () => {
@@ -26,7 +40,7 @@ const Transaction = () => {
         }
 
         const res = await fetch(
-          "https://geochain.app/mysite/api/transactions/history/",
+          "https://geochain.app/mytrust/api/transactions/history/",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -91,10 +105,11 @@ const Transaction = () => {
                         >
                           {tr.transaction_type.toUpperCase()}
                         </span>
-                        {tr.transaction_type === "credit" && (
+                        {/* <span>{tr.transaction_type.toUpperCase()}</span> */}
+
+                        {tr.transaction_type === "credit" ? (
                           <p>From: {tr.receiver_bank || "External Bank"}</p>
-                        )}
-                        {tr.transaction_type === "debit" && (
+                        ) : (
                           <p>To: {tr.receiver_bank || "External Bank"}</p>
                         )}
 
@@ -102,13 +117,13 @@ const Transaction = () => {
                       </div>
 
                       <div>
-                        <span>Name: {tr.receiver_name}</span>{" "}
+                        <span>Name: {tr.name}</span>{" "}
                         <span>Ref: {tr.reference}</span>
                       </div>
                     </div>
 
                     <div>
-                      <span
+                      {/* <span
                         style={{
                           color:
                             tr.transaction_type === "credit"
@@ -119,7 +134,24 @@ const Transaction = () => {
                           fontWeight: "bold",
                         }}
                       >
-                        {tr.transaction_type === "credit" ? "+" : "-"}$
+                        {tr.transaction_type === "credit" ? "+" : "-"}
+                        {symbol}
+                        {Number(tr.amount).toLocaleString()}
+                      </span> */}
+
+                      <span
+                        style={{
+                          color:
+                            tr.transaction_type === "credit"
+                              ? "green"
+                              : tr.transaction_type === "debit"
+                                ? "red"
+                                : "black",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {tr.transaction_type === "credit" ? "+" : "-"}
+                        {symbol}
                         {Number(tr.amount).toLocaleString()}
                       </span>
                     </div>

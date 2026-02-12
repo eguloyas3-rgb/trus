@@ -90,7 +90,7 @@ const Footer = () => {
 
       <div className="last">
         <div className="samll">
-          <span>© 2026 West Vent Online Bank. All rights reserved.</span>
+          <span>© 2026 West Vent Trust Bank. All rights reserved.</span>
           <span
             style={{
               display: "flex",
@@ -114,8 +114,12 @@ const Footer = () => {
           </span>
         </div>
         <div className="lasts">
-          <span>Privacy Policy</span>
-          <span>Terms of Service</span>
+          <span onClick={() => (window.location.href = "/privacy")}>
+            Privacy Policy
+          </span>
+          <span onClick={() => (window.location.href = "/terms-of-service")}>
+            Terms of Service
+          </span>
           <span onClick={() => (window.location.href = "/contact-us")}>
             Accessibility
           </span>

@@ -13,6 +13,22 @@ import { FiHelpCircle } from "react-icons/fi";
 import { FaLocationDot } from "react-icons/fa6";
 import Overlay from "../overlay.jsx";
 
+const currencySymbols = {
+  USD: "$",
+  AUD: "A$",
+  CAD: "C$",
+  GBP: "£",
+  EUR: "€",
+};
+
+const localeMap = {
+  USD: "en-US",
+  AUD: "en-AU",
+  CAD: "en-CA",
+  GBP: "en-GB",
+  EUR: "de-DE", // or whatever suits
+};
+
 const Dashbaord = () => {
   const fetchdata = useDashboard();
   const [showOverlay, setShowOverlay] = useState(false);
@@ -26,6 +42,13 @@ const Dashbaord = () => {
     });
   };
 
+  // safe way to get balance and currency
+  const balance = fetchdata?.account?.balance || 0;
+  const accountCurrency = fetchdata?.account?.currency || "USD"; // ✅ defined here
+  const currency = accountCurrency;
+  const symbol = currencySymbols[currency] || currency;
+  const locale = localeMap[currency] || "en-US";
+
   return (
     <Dashboards>
       {showOverlay && <Overlay />}
@@ -35,7 +58,7 @@ const Dashbaord = () => {
           <div className="names">
             <p>West Vest Online Bank</p>
             <p>
-              {" "}
+              chk
               {fetchdata?.account?.account_number
                 ? `****${fetchdata.account.account_number.toString().slice(-4)}`
                 : ""}
@@ -45,14 +68,27 @@ const Dashbaord = () => {
           <div className="banaces">
             <p>Available Balance</p>
             <span>
-              {" "}
-              $
+              {symbol}
+              {new Intl.NumberFormat(locale, {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              }).format(balance)}
+            </span>
+          </div>
+
+          {/* 
+          <div className="banaces">
+            <p>Available Balance</p>
+
+            <span>
+              {symbol}
+
               {new Intl.NumberFormat("en-US", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               }).format(fetchdata?.account?.balance)}
             </span>
-          </div>
+          </div> */}
 
           <div className="actives">
             <p className="acives">

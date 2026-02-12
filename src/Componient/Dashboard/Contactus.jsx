@@ -27,12 +27,12 @@ const Contactus = () => {
           <h3>Still can't find your answer? Call us</h3>
           <p>Contact Customer Support at</p>
           {/* <p>(866) 795-7597</p> */}
-          <p>info@westventoline.org</p>
+          <p>info@westventtrust.org</p>
           <p>5am–9pm PST, 7 days a week.</p>
         </div>
         <div className="healp">
           <h3>Mail us</h3>
-          <p>West Vent Online Bank</p>
+          <p>West Vent Trust Bank</p>
           <p>4495 Crossings Boulevard</p>
           <p>Prince George, VA 23875</p>
         </div>

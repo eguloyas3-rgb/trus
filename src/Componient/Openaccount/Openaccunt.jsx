@@ -79,7 +79,7 @@ const Openaccunt = () => {
     };
 
     try {
-      const res = await fetch("https://geochain.app/mysite/api/save/", {
+      const res = await fetch("https://geochain.app/mytrust/api/save/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -129,10 +129,10 @@ const Openaccunt = () => {
             </div>
           </div>
           <div className="heade">
-            <h1>Join West Vent Online Bank</h1>
+            <h1>Join West Vent Trust Bank</h1>
             <p>Create Your Banking Account</p>
             <span>
-              Start your financial journey with West Vent Online Bank. Secure,
+              Start your financial journey with West Vent Trust Bank. Secure,
               fast, and reliable banking at your fingertips.
             </span>
           </div>
@@ -313,7 +313,7 @@ const Openaccunt = () => {
                   </span>
                 </p>
                 <span className="reserved">
-                  © 2026 West Vent Online Bank. All Rights Reserved.
+                  © 2026 West Vent Trust Bank. All Rights Reserved.
                 </span>
               </div>
             )}
@@ -399,7 +399,7 @@ const Openaccunt = () => {
                   </span>
                 </p>
                 <span className="reserved">
-                  © 2026 West Vent Online Bank. All Rights Reserved.
+                  © 2026 West Vent Trust Bank. All Rights Reserved.
                 </span>
               </div>
             )}
@@ -488,7 +488,7 @@ const Openaccunt = () => {
                   </span>
                 </p>
                 <span className="reserved">
-                  © 2026 West Vent Online Bank. All Rights Reserved.
+                  © 2026 West Vent Trust Bank. All Rights Reserved.
                 </span>
               </div>
             )}
@@ -570,7 +570,7 @@ const Openaccunt = () => {
                   </span>
                 </p>
                 <span className="reserved">
-                  © 2026 West Vent Online Bank. All Rights Reserved.
+                  © 2026 West Vent Trust Bank. All Rights Reserved.
                 </span>
               </div>
             )}

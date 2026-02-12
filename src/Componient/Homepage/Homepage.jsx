@@ -28,7 +28,7 @@ const Homepage = () => {
       <div className="homepage-main">
         <div className="witht">
           <div className="homepage-topic">
-            <h2>West Vent Online Bank</h2>
+            <h2>West Vent Trust Bank</h2>
             <p>
               We do banking differently. We believe that people come first, and
               that everyone deserves a great experience every step of the way.
@@ -127,8 +127,8 @@ const Homepage = () => {
 
       <div className="homepage-body">
         <div className="onliebank">
-          <p className="westbank">West Vent Online Bank Rates</p>
-          <h2>West Vent Online Bank Member Care</h2>
+          <p className="westbank">West Vent Trust Bank Rates</p>
+          <h2>West Vent Trust Bank Member Care</h2>
           <span className="Discover">
             Discover competitive rates designed to help your money grow faster
           </span>
@@ -255,7 +255,7 @@ const Homepage = () => {
             <span>
               <FcAbout />
             </span>
-            <h1>About West Vent Online Bank</h1>
+            <h1>About West Vent Trust Bank</h1>
             <p>
               Learn more about our commitment to exceptional banking services
               and community support.
@@ -311,7 +311,7 @@ const Homepage = () => {
           <div className="firsrbox">
             <h1 className="h1here">Building Strength Together</h1>
             <p className="pfirsrbox">
-              West Vent Online Bank is a full-service credit union built on the
+              West Vent Trust Bank is a full-service credit union built on the
               foundation of providing our members with every step of their
               financial journey. We're committed to helping our members achieve
               their financial goals through personalized service and competitive
@@ -442,7 +442,7 @@ const Homepage = () => {
             <p>Phone Banking</p>
             <span>Available 24/7</span>
             <span>Call: 1-800-BANKING</span>
-            <span>International: +1 (380) 219 - 7935</span>
+            <span>International: +1 (945) 257 - 6091</span>
           </div>
           <div>
             <span className="spamhuma">
@@ -450,7 +450,7 @@ const Homepage = () => {
             </span>
             <p>Email Support</p>
             <span>Response within 24hrs</span>
-            <span>info@westventoline.org</span>
+            <span>info@westventtrust.org</span>
           </div>
           <div>
             <span className="spamhuma">

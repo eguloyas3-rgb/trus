@@ -39,7 +39,7 @@ const Login = () => {
           };
 
     try {
-      const res = await fetch("https://geochain.app/mysite/api/login/", {
+      const res = await fetch("https://geochain.app/mytrust/api/login/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -86,7 +86,7 @@ const Login = () => {
     setResendMessage("");
 
     try {
-      const res = await fetch("https://geochain.app/mysite/api/login/", {
+      const res = await fetch("https://geochain.app/mytrust/api/login/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: formData.username, resend: true }),
@@ -119,7 +119,7 @@ const Login = () => {
           </div>
           <div className="heade">
             <h1>Welcome Back</h1>
-            <p>West Vent Online Bank</p>
+            <p>West Vent Trust Bank</p>
             <span>
               Swift and secure money transfers worldwide. Experience banking
               reimagined.
@@ -172,7 +172,7 @@ const Login = () => {
             {error && <p className="errormessgae">{error}</p>}
             <p className="signin">Sign In</p>
             <span className="topis">
-              Access your West Vent Online Bank account
+              Access your West Vent Trust Bank account
             </span>
 
             <div className="formslogin">
@@ -220,7 +220,7 @@ const Login = () => {
                 <FaSignInAlt /> Sign In to Account
               </button>
             </div>
-            <p className="neswest">New to West Vent Online Bank?</p>
+            <p className="neswest">New to West Vent Trust Bank?</p>
 
             <div className="signins">
               <button

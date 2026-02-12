@@ -25,6 +25,8 @@ import Grants from "./Componient/grants/Grans.jsx";
 import Personalbnk from "./Componient/grants/Personnal.jsx";
 import Businessbnk from "./Componient/grants/Business.jsx";
 import Loan from "./Componient/grants/Loan.jsx";
+import Termservice from "./Componient/Termservice.jsx";
+import Privacy from "./Componient/Privacy.jsx";
 
 function App() {
   const token = localStorage.getItem("accessToken");
@@ -133,6 +135,8 @@ function App() {
         <Route path="/personal" element={<Personalbnk />} />
         <Route path="/business" element={<Businessbnk />} />
         <Route path="/loan-credit" element={<Loan />} />
+        <Route path="/terms-of-service" element={<Termservice />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
       {!token && <Footer />}
 

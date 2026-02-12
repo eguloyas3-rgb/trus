@@ -5,6 +5,14 @@ import { FaArrowLeft } from "react-icons/fa";
 import { MdOutlineClose } from "react-icons/md";
 import Overlay from "../overlay.jsx";
 
+const currencySymbols = {
+  USD: "$",
+  AUD: "A$",
+  CAD: "C$",
+  GBP: "£",
+  EUR: "€",
+};
+
 const Wiretransfer = () => {
   const fetchdata = useDashboard();
 
@@ -27,6 +35,9 @@ const Wiretransfer = () => {
   const [showCodeModal, setShowCodeModal] = useState(false);
   const [messages, setMessages] = useState(false);
 
+  const currency = fetchdata?.account?.currency || "USD";
+  const symbol = currencySymbols[currency] || currency;
+
   const handleTransferSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -43,14 +54,14 @@ const Wiretransfer = () => {
       const requestData = {
         amount: parseFloat(amount),
         receiver_account: receiverAccount,
-        receiver_name: receiverName,
+        name: receiverName,
         receiver_phone: receiverPhone,
         receiver_bank: receiverBank,
         swift_code: swiftCode,
         purpose,
       };
 
-      const res = await fetch("https://geochain.app/mysite/api/transfers/", {
+      const res = await fetch("https://geochain.app/mytrust/api/transfers/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -105,7 +116,7 @@ const Wiretransfer = () => {
       const requestData = {
         amount: parseFloat(amount),
         receiver_account: receiverAccount,
-        receiver_name: receiverName,
+        name: receiverName,
         receiver_phone: receiverPhone,
         receiver_bank: receiverBank,
         swift_code: swiftCode,
@@ -113,7 +124,7 @@ const Wiretransfer = () => {
         [codeKey]: codeInput,
       };
 
-      const res = await fetch("https://geochain.app/mysite/api/transfers/", {
+      const res = await fetch("https://geochain.app/mytrust/api/transfers/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -138,7 +149,7 @@ const Wiretransfer = () => {
           setCurrentCodeType(null);
           setCodeInput("");
           window.location.href = "/transaction";
-        }, 12000);
+        }, 7000);
       }
     } catch (err) {
       setError(err.message);
@@ -155,7 +166,7 @@ const Wiretransfer = () => {
     setError("");
     try {
       const token = localStorage.getItem("accessToken");
-      const res = await fetch("https://geochain.app/mysite/api/transfers/", {
+      const res = await fetch("https://geochain.app/mytrust/api/transfers/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -217,7 +228,7 @@ const Wiretransfer = () => {
             <strong>Balance</strong>
           </p>
           <strong>
-            ${" "}
+            {symbol}
             {new Intl.NumberFormat("en-US", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
@@ -251,8 +262,10 @@ const Wiretransfer = () => {
           <div>
             <label>Receiver’s Account</label>
             <input
+              maxLength={13}
               value={receiverAccount}
               onChange={(e) => setReceiverAccount(e.target.value)}
+              placeholder="Receiver’s Account Number"
               required
             />
           </div>
@@ -262,6 +275,7 @@ const Wiretransfer = () => {
             <input
               value={receiverName}
               onChange={(e) => setReceiverName(e.target.value)}
+              placeholder="Receiver’s Full Name"
               required
             />
           </div>
@@ -271,6 +285,7 @@ const Wiretransfer = () => {
             <input
               value={receiverBank}
               onChange={(e) => setReceiverBank(e.target.value)}
+              placeholder="Receiver’s Bank Name"
               required
             />
           </div>
@@ -278,8 +293,10 @@ const Wiretransfer = () => {
           <div>
             <label>Routing Number</label>
             <input
+              maxLength={9}
               value={swiftCode}
               onChange={(e) => setSwiftCode(e.target.value)}
+              placeholder="Routing Number (e.g., 011000015)"
               required
             />
           </div>
@@ -470,18 +487,35 @@ const Wiretransfer = () => {
             <input
               value={purpose}
               onChange={(e) => setPurpose(e.target.value)}
+              placeholder="Purpose of Transfer"
             />
           </div>
 
           <div>
             <label>Amount</label>
-            <input
-              type="number"
-              step="0.01"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              required
-            />
+            <div style={{ position: "relative", display: "inline-block" }}>
+              <span
+                style={{
+                  position: "absolute",
+                  left: "10px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  pointerEvents: "none",
+                }}
+              >
+                {symbol}
+              </span>
+
+              <input
+                style={{ padding: "10px 40px" }}
+                type="number"
+                step="0.01"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                placeholder="500"
+                required
+              />
+            </div>
           </div>
 
           <div className="btn">
@@ -549,7 +583,7 @@ const Wiretransfer = () => {
                       If you do not have this code, please contact your account
                       manager
                     </p>
-                    <span>info@westventoline.org</span>
+                    <span>info@westventtrust.org</span>
                   </div>
                 )}
               </form>

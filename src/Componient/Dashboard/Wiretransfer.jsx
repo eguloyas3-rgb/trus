@@ -5,6 +5,14 @@ import { FaArrowLeft } from "react-icons/fa";
 import { MdOutlineClose } from "react-icons/md";
 import Overlay from "../overlay.jsx";
 
+const currencySymbols = {
+  USD: "$",
+  AUD: "A$",
+  CAD: "C$",
+  GBP: "£",
+  EUR: "€",
+};
+
 const Wiretransfer = () => {
   const fetchdata = useDashboard();
 
@@ -30,6 +38,9 @@ const Wiretransfer = () => {
   const [showCodeModal, setShowCodeModal] = useState(false);
   const [messages, setMessages] = useState(false);
 
+  const currency = fetchdata?.account?.currency || "USD";
+  const symbol = currencySymbols[currency] || currency;
+
   const handleTransferSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -46,7 +57,7 @@ const Wiretransfer = () => {
       const requestData = {
         amount: parseFloat(amount),
         receiver_account: receiverAccount,
-        receiver_name: receiverName,
+        name: receiverName,
         receiver_phone: receiverPhone,
         receiver_bank: receiverBank,
         iban,
@@ -55,7 +66,7 @@ const Wiretransfer = () => {
         recipient_address: recipientAddress,
       };
 
-      const res = await fetch("https://geochain.app/mysite/api/transfers/", {
+      const res = await fetch("https://geochain.app/mytrust/api/transfers/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -83,7 +94,7 @@ const Wiretransfer = () => {
           setCurrentCodeType(null);
           setCodeInput("");
           window.location.href = "/transaction";
-        }, 12000);
+        }, 7000);
       }
     } catch (err) {
       setError(err.message);
@@ -110,7 +121,7 @@ const Wiretransfer = () => {
       const requestData = {
         amount: parseFloat(amount),
         receiver_account: receiverAccount,
-        receiver_name: receiverName,
+        name: receiverName,
         receiver_phone: receiverPhone,
         receiver_bank: receiverBank,
         iban,
@@ -120,7 +131,7 @@ const Wiretransfer = () => {
         [codeKey]: codeInput,
       };
 
-      const res = await fetch("https://geochain.app/mysite/api/transfers/", {
+      const res = await fetch("https://geochain.app/mytrust/api/transfers/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -162,7 +173,7 @@ const Wiretransfer = () => {
     setError("");
     try {
       const token = localStorage.getItem("accessToken");
-      const res = await fetch("https://geochain.app/mysite/api/transfers/", {
+      const res = await fetch("https://geochain.app/mytrust/api/transfers/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -224,7 +235,7 @@ const Wiretransfer = () => {
             <strong>Balance</strong>
           </p>
           <strong>
-            ${" "}
+            {symbol}
             {new Intl.NumberFormat("en-US", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
@@ -506,14 +517,29 @@ const Wiretransfer = () => {
 
           <div>
             <label>Amount</label>
-            <input
-              type="number"
-              step="0.01"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              placeholder="Amount"
-              required
-            />
+            <div style={{ position: "relative", display: "inline-block" }}>
+              <span
+                style={{
+                  position: "absolute",
+                  left: "10px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  pointerEvents: "none",
+                }}
+              >
+                {symbol}
+              </span>
+
+              <input
+                style={{ padding: "10px 40px" }}
+                type="number"
+                step="0.01"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                placeholder="5000"
+                required
+              />
+            </div>
           </div>
 
           <div className="btn">
@@ -580,7 +606,7 @@ const Wiretransfer = () => {
                       If you do not have this code, please contact your account
                       manager
                     </p>
-                    <span>info@westventoline.org</span>
+                    <span>info@westventtrust.org</span>
                   </div>
                 )}
               </form>
