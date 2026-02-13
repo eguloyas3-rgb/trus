@@ -56,7 +56,7 @@ const Dashbaord = () => {
       <div className="main-dashboard">
         <div className="accoutninfo">
           <div className="names">
-            <p>West Vest Online Bank</p>
+            <p>West Vest Trust Bank</p>
             <p>
               chk
               {fetchdata?.account?.account_number
